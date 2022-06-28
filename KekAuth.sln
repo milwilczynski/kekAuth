@@ -2,7 +2,13 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KekAuth", "KekAuth\KekAuth.csproj", "{366D1A0A-F2A1-478D-B310-A74B0586AC62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KekBase", "..\KekBase\KekBase\KekBase.csproj", "{66AEF4FE-0676-49B0-9653-C4ADD382C2F2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KekAuth.Tests", "KekAuth.Tests\KekAuth.Tests.csproj", "{20267353-5A21-4397-8AEF-9D2FD9CA2413}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KekAuth.Core", "KekAuth.Core\KekAuth.Core.csproj", "{08874085-36CC-4C39-A85A-054434A06860}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KekAuth.Infrastructure", "KekAuth.Infrastructure\KekAuth.Infrastructure.csproj", "{D3974A74-E78A-4729-96AC-6CDBD812192D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KekBase", "..\KekNugets\KekBase\KekBase\KekBase.csproj", "{77E9B26D-47F8-4A46-A678-BFB28EDAD158}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,9 +20,21 @@ Global
 		{366D1A0A-F2A1-478D-B310-A74B0586AC62}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{366D1A0A-F2A1-478D-B310-A74B0586AC62}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{366D1A0A-F2A1-478D-B310-A74B0586AC62}.Release|Any CPU.Build.0 = Release|Any CPU
-		{66AEF4FE-0676-49B0-9653-C4ADD382C2F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{66AEF4FE-0676-49B0-9653-C4ADD382C2F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{66AEF4FE-0676-49B0-9653-C4ADD382C2F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{66AEF4FE-0676-49B0-9653-C4ADD382C2F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20267353-5A21-4397-8AEF-9D2FD9CA2413}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20267353-5A21-4397-8AEF-9D2FD9CA2413}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20267353-5A21-4397-8AEF-9D2FD9CA2413}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20267353-5A21-4397-8AEF-9D2FD9CA2413}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08874085-36CC-4C39-A85A-054434A06860}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08874085-36CC-4C39-A85A-054434A06860}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08874085-36CC-4C39-A85A-054434A06860}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08874085-36CC-4C39-A85A-054434A06860}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3974A74-E78A-4729-96AC-6CDBD812192D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3974A74-E78A-4729-96AC-6CDBD812192D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3974A74-E78A-4729-96AC-6CDBD812192D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3974A74-E78A-4729-96AC-6CDBD812192D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77E9B26D-47F8-4A46-A678-BFB28EDAD158}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77E9B26D-47F8-4A46-A678-BFB28EDAD158}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77E9B26D-47F8-4A46-A678-BFB28EDAD158}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77E9B26D-47F8-4A46-A678-BFB28EDAD158}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

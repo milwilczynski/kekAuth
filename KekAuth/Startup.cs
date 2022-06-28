@@ -1,6 +1,10 @@
 ﻿using Autofac;
 using KekAuth.Bootstrapper;
 using KekBase.Initializer;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 
 namespace KekAuth;
 
@@ -21,27 +25,19 @@ public class Startup
 
     public void ConfigureServices(IServiceCollection services)
     {
-        services.PrepareApplication(Configuration);
-        services.AddControllers();
+        services.ConfigureKekServices(Configuration);
         services.AddCors(options =>
         {
-            options.AddPolicy("AllowAll", builder => builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
+            options.AddPolicy("AllowAll",
+                builder => builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
         });
+        services.AddOptions();
         services.AddSwaggerGen();
     }
 
     public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
     {
-        app.UseRouting();
-        app.UseCors(p => { p.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod(); });
-        app.UseAuthentication();
-        app.UseAuthorization();
-
-        app.UseEndpoints(endpoints =>
-        {
-            endpoints.MapControllerRoute("default", "api/v1/{controller=Home}/{action=Index}/{id?}");
-        });
-
+        app.ConfigureKekApp(loggerFactory);
 
 #if DEBUG
         app.UseSwagger();

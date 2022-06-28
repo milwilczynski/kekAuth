@@ -10,9 +10,9 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="AspNetCore.RouteAnalyzer" Version="0.5.3"/>
         <PackageReference Include="Autofac" Version="6.4.0" />
         <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="8.0.0" />
-        <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.2.9" />
         <PackageReference Include="Serilog" Version="2.11.0" />
         <PackageReference Include="Serilog.Enrichers.Thread" Version="3.1.0" />
         <PackageReference Include="Serilog.Enrichers.WithCaller" Version="1.2.0" />
@@ -22,7 +22,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\KekBase\KekBase\KekBase.csproj" />
+        <ProjectReference Include="..\..\KekNugets\KekBase\KekBase\KekBase.csproj"/>
     </ItemGroup>
 
 </Project>
