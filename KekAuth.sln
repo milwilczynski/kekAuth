@@ -4,11 +4,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KekAuth", "KekAuth\KekAuth.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KekAuth.Tests", "KekAuth.Tests\KekAuth.Tests.csproj", "{20267353-5A21-4397-8AEF-9D2FD9CA2413}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KekAuth.Core", "KekAuth.Core\KekAuth.Core.csproj", "{08874085-36CC-4C39-A85A-054434A06860}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KekAuth.Application", "KekAuth.Application\KekAuth.Application.csproj", "{08874085-36CC-4C39-A85A-054434A06860}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KekAuth.Infrastructure", "KekAuth.Infrastructure\KekAuth.Infrastructure.csproj", "{D3974A74-E78A-4729-96AC-6CDBD812192D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KekBase", "..\KekNugets\KekBase\KekBase\KekBase.csproj", "{77E9B26D-47F8-4A46-A678-BFB28EDAD158}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KekAuth.Domain", "KekAuth.Domain\KekAuth.Domain.csproj", "{0403588C-64B1-45DD-B60F-18668793A327}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,5 +38,9 @@ Global
 		{77E9B26D-47F8-4A46-A678-BFB28EDAD158}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77E9B26D-47F8-4A46-A678-BFB28EDAD158}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77E9B26D-47F8-4A46-A678-BFB28EDAD158}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0403588C-64B1-45DD-B60F-18668793A327}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0403588C-64B1-45DD-B60F-18668793A327}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0403588C-64B1-45DD-B60F-18668793A327}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0403588C-64B1-45DD-B60F-18668793A327}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -1,10 +1,7 @@
 ﻿using Autofac;
 using KekAuth.Bootstrapper;
+using KekAuth.Infrastructure.Configurations;
 using KekBase.Initializer;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 
 namespace KekAuth;
 
@@ -26,6 +23,7 @@ public class Startup
     public void ConfigureServices(IServiceCollection services)
     {
         services.ConfigureKekServices(Configuration);
+        services.Configure<JwtConfiguration>(Configuration.GetSection("JwtConfiguration"));
         services.AddCors(options =>
         {
             options.AddPolicy("AllowAll",

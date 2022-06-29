@@ -23,6 +23,7 @@
 
     <ItemGroup>
         <ProjectReference Include="..\..\KekNugets\KekBase\KekBase\KekBase.csproj"/>
+        <ProjectReference Include="..\KekAuth.Infrastructure\KekAuth.Infrastructure.csproj"/>
     </ItemGroup>
 
 </Project>
