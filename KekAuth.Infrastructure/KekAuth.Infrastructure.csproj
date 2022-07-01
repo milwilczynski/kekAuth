@@ -8,6 +8,7 @@
 
     <ItemGroup>
         <ProjectReference Include="..\KekAuth.Application\KekAuth.Application.csproj"/>
+        <ProjectReference Include="..\KekAuth.Domain\KekAuth.Domain.csproj"/>
     </ItemGroup>
 
     <ItemGroup>

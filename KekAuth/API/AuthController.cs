@@ -16,12 +16,12 @@ public class AuthController : Controller
     [HttpPost]
     public async Task<IActionResult> Login([FromBody] LoginRequest request)
     {
-        if (string.IsNullOrEmpty(request.Login) && string.IsNullOrEmpty(request.Password))
+        if (string.IsNullOrEmpty(request.Email) && string.IsNullOrEmpty(request.Password))
         {
             return BadRequest();
         }
 
-        return Ok("user");
+        return Ok(await _authenticationService.Login(request.Email, request.Password));
     }
 
     [HttpPost]
@@ -36,6 +36,6 @@ public class AuthController : Controller
         var user = await _authenticationService.Register(request.Username, request.Password, request.Email,
             request.FirstName, request.LastName);
 
-        return Ok(new {user});
+        return Ok(user);
     }
 }
