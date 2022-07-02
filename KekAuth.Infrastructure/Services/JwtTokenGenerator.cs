@@ -32,7 +32,8 @@ public class JwtTokenGenerator : IJwtTokenGenerator
             //claim with user roles
             new Claim(ClaimTypes.Role, "User"),
             new Claim(JwtRegisteredClaimNames.Iat,
-                DateTime.Now.ToUniversalTime().ToString(CultureInfo.InvariantCulture), ClaimValueTypes.Integer64),
+                _dateTimeProvider.Now
+                    .ToString(CultureInfo.InvariantCulture), ClaimValueTypes.Integer64),
             new Claim(JwtRegisteredClaimNames.UniqueName, login)
         };
 
@@ -43,7 +44,7 @@ public class JwtTokenGenerator : IJwtTokenGenerator
             _jwtConfiguration.Issuer,
             _jwtConfiguration.Audience,
             claims,
-            expires: _dateTimeProvider.Now.AddMinutes(_jwtConfiguration.ExpiryMinutes).DateTime,
+            expires: _dateTimeProvider.Now.AddMinutes(_jwtConfiguration.ExpiryMinutes),
             signingCredentials: creds
         );
 

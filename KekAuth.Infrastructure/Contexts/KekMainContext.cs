@@ -1,4 +1,5 @@
-﻿using KekAuth.Domain.Entities;
+﻿using KekAuth.Application.Interfaces;
+using KekAuth.Domain.Entities;
 using KekAuth.Infrastructure.DBConfigurations;
 using KekAuth.Infrastructure.Seeds;
 using Microsoft.EntityFrameworkCore;
@@ -7,8 +8,12 @@ namespace KekAuth.Infrastructure.Contexts;
 
 public class KekMainContext : DbContext
 {
-    public KekMainContext(DbContextOptions options) : base(options)
+    private readonly IDateTimeProvider _dateTimeProvider;
+
+    public KekMainContext(DbContextOptions options, IDateTimeProvider dateTimeProvider) : base(options)
     {
+        _dateTimeProvider = dateTimeProvider;
+        ;
     }
 
     public DbSet<User> Users { get; set; } = null!;
@@ -30,7 +35,7 @@ public class KekMainContext : DbContext
                 e.State == EntityState.Added
                 || e.State == EntityState.Modified));
 
-        var now = DateTime.Now;
+        var now = _dateTimeProvider.Now;
         var date = new DateTime(now.Year, now.Month, now.Day,
             now.Hour, now.Minute, now.Second, now.Millisecond);
         foreach (var entityEntry in entries)

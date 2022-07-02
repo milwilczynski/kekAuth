@@ -2,5 +2,5 @@
 
 public interface IDateTimeProvider
 {
-    DateTimeOffset Now { get; }
+    DateTime Now { get; }
 }
