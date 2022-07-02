@@ -1,7 +1,9 @@
 ﻿using Autofac;
 using KekAuth.Bootstrapper;
 using KekAuth.Infrastructure.Configurations;
+using KekAuth.Infrastructure.Contexts;
 using KekBase.Initializer;
+using Microsoft.EntityFrameworkCore;
 
 namespace KekAuth;
 
@@ -24,10 +26,19 @@ public class Startup
     {
         services.ConfigureKekServices(Configuration);
         services.Configure<JwtConfiguration>(Configuration.GetSection("JwtConfiguration"));
+        services.AddDbContext<KekMainContext>(options =>
+        {
+            options
+                .UseSnakeCaseNamingConvention()
+                .UseNpgsql(Configuration.GetConnectionString("Default"))
+                .EnableSensitiveDataLogging();
+        });
         services.AddCors(options =>
         {
             options.AddPolicy("AllowAll",
-                builder => builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
+                builder => builder.AllowAnyHeader()
+                    .AllowAnyMethod()
+                    .AllowAnyOrigin());
         });
         services.AddOptions();
         services.AddSwaggerGen();
